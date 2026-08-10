@@ -37,7 +37,7 @@ function renderHeroCarousel() {
   dotsContainer.innerHTML = HERO_IMAGES.map((_, index) => {
     const isActive = index === 0;
     return `
-      <button onclick="setSlide(${index})" class="dot-btn ${isActive ? 'w-6 bg-white' : 'w-2 bg-white/50'} h-2 rounded-full transition-all" aria-label="슬라이드 ${index + 1}"></button>
+      <button onclick="handleDotClick(${index})" class="dot-btn ${isActive ? 'w-6 bg-white' : 'w-2 bg-white/50'} h-2 rounded-full transition-all" aria-label="슬라이드 ${index + 1}"></button>
     `;
   }).join('');
 }
@@ -93,11 +93,66 @@ function initCarousel() {
   const slides = document.querySelectorAll('.carousel-slide');
   if (!slides.length) return;
   setSlide(0);
+  resetCarouselTimer();
+  initHeroTouch();
+}
 
+function resetCarouselTimer() {
+  if (carouselTimer) {
+    clearInterval(carouselTimer);
+  }
+  const slides = document.querySelectorAll('.carousel-slide');
+  if (!slides.length) return;
   carouselTimer = setInterval(() => {
     const next = (currentSlide + 1) % slides.length;
     setSlide(next);
   }, 5000);
+}
+
+function handleDotClick(index) {
+  setSlide(index);
+  resetCarouselTimer();
+}
+
+function initHeroTouch() {
+  const heroSection = document.getElementById('hero');
+  if (!heroSection) return;
+
+  let startX = 0;
+  let startY = 0;
+  let isThresholdMet = false;
+
+  heroSection.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    isThresholdMet = false;
+  }, { passive: true });
+
+  heroSection.addEventListener('touchmove', (e) => {
+    if (isThresholdMet) return;
+
+    const diffX = e.touches[0].clientX - startX;
+    const diffY = e.touches[0].clientY - startY;
+
+    // Check if horizontal swipe is dominant and exceeds threshold of 50px
+    if (Math.abs(diffX) > 50 && Math.abs(diffX) > Math.abs(diffY)) {
+      isThresholdMet = true;
+      const slides = document.querySelectorAll('.carousel-slide');
+      if (!slides.length) return;
+
+      if (diffX < 0) {
+        // Swipe left -> Next slide
+        const next = (currentSlide + 1) % slides.length;
+        setSlide(next);
+        resetCarouselTimer();
+      } else {
+        // Swipe right -> Previous slide
+        const prev = (currentSlide - 1 + slides.length) % slides.length;
+        setSlide(prev);
+        resetCarouselTimer();
+      }
+    }
+  }, { passive: true });
 }
 
 function setSlide(index) {
