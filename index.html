@@ -5,16 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>화사뷰티 - HWASA BEAUTY 프리미엄 반영구 & 두피채움 SMP</title>
   
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
-  
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
   <!-- FontAwesome Icons CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Local Pure CSS Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css" />
 
   <script>
     tailwind.config = {
@@ -40,59 +38,26 @@
       }
     }
   </script>
-
-  <style>
-    body {
-      font-family: 'Noto Sans KR', 'Hanken Grotesk', sans-serif;
-      background-color: #fcf9f8;
-      color: #1b1c1c;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-  </style>
 </head>
 <body class="antialiased selection:bg-[#735c00]/20 selection:text-[#735c00]">
 
   <!-- Header -->
   <header class="sticky top-0 z-40 bg-[#fcf9f8]/95 backdrop-blur-md border-b border-[#e9e2d3]/60">
     <div class="max-w-md mx-auto px-4 h-14 flex items-center justify-between">
-      <div class="flex items-center gap-2.5">
+      <div class="flex items-center gap-2">
         <button onclick="toggleDrawer(true)" class="p-1.5 text-[#1b1c1c] hover:bg-[#f0eded] rounded-lg transition-colors" aria-label="메뉴 열기">
           <i class="fa-solid fa-bars text-lg"></i>
         </button>
-		<div class="w-8 h-8 rounded-full bg-[#f6f3f2] border border-[#d0c5af] p-0.5 flex items-center justify-center transition-all shadow-xs" title="화사뷰티 로고">
-          <svg viewBox="0 0 100 100" class="w-full h-full text-[#735c00]" fill="none" stroke="currentColor" stroke-width="3.5">
-            <path d="M50 20 C35 30 35 55 50 65 C65 55 65 30 50 20 Z" fill="#f4e8d3" fill-opacity="0.5" />
-            <path d="M50 65 C30 50 20 35 30 20 C42 20 48 40 50 65 Z" />
-            <path d="M50 65 C70 50 80 35 70 20 C58 20 52 40 50 65 Z" />
-            <path d="M50 65 L50 90" stroke-width="4" stroke-linecap="round" />
-          </svg>
+        <div class="flex items-center gap-2 font-serif text-lg font-bold tracking-tight text-[#1b1c1c]">
+          <img src="./image/logo.svg" alt="화사뷰티 로고" class="w-6 h-6 object-contain" />
+          <span>화사뷰티</span>
         </div>
-        <a href="#" class="font-serif text-lg font-bold tracking-tight text-[#1b1c1c]">
-          화사뷰티
-        </a>
       </div>
 
       <div class="flex items-center gap-2">
         <button onclick="openModal('shareModal')" class="p-1.5 text-[#635e53] hover:text-[#735c00] hover:bg-[#f0eded] rounded-full transition-colors" title="공유하기">
           <i class="fa-solid fa-share-nodes"></i>
         </button>
-		<!--
-        <button onclick="openModal('bookingModal')" class="w-8 h-8 rounded-full bg-[#f6f3f2] border border-[#d0c5af] p-0.5 flex items-center justify-center hover:ring-2 hover:ring-[#735c00]/30 transition-all shadow-xs" title="화사뷰티 로고">
-          <svg viewBox="0 0 100 100" class="w-full h-full text-[#735c00]" fill="none" stroke="currentColor" stroke-width="3.5">
-            <path d="M50 20 C35 30 35 55 50 65 C65 55 65 30 50 20 Z" fill="#f4e8d3" fill-opacity="0.5" />
-            <path d="M50 65 C30 50 20 35 30 20 C42 20 48 40 50 65 Z" />
-            <path d="M50 65 C70 50 80 35 70 20 C58 20 52 40 50 65 Z" />
-            <path d="M50 65 L50 90" stroke-width="4" stroke-linecap="round" />
-          </svg>
-        </button>
-		-->
       </div>
     </div>
   </header>
@@ -103,12 +68,7 @@
       <div class="flex items-center justify-between border-b border-[#e9e2d3] pb-4">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-full bg-[#f6f3f2] border border-[#d0c5af] p-1 flex items-center justify-center">
-            <svg viewBox="0 0 100 100" class="w-full h-full text-[#735c00]" fill="none" stroke="currentColor" stroke-width="3.5">
-              <path d="M50 20 C35 30 35 55 50 65 C65 55 65 30 50 20 Z" fill="#f4e8d3" fill-opacity="0.5" />
-              <path d="M50 65 C30 50 20 35 30 20 C42 20 48 40 50 65 Z" />
-              <path d="M50 65 C70 50 80 35 70 20 C58 20 52 40 50 65 Z" />
-              <path d="M50 65 L50 90" stroke-width="4" stroke-linecap="round" />
-            </svg>
+            <img src="./image/logo.svg" alt="화사뷰티" class="w-full h-full object-contain" />
           </div>
           <div>
             <h3 class="font-serif font-bold text-lg text-[#1b1c1c]">화사뷰티 HWASA BEAUTY</h3>
@@ -126,20 +86,25 @@
           <span class="text-xs text-[#735c00] font-semibold">Home</span>
         </a>
         <a href="#our-services" onclick="toggleDrawer(false)" class="w-full px-4 py-3 rounded-xl font-medium text-[#1b1c1c] hover:bg-[#f6f3f2] flex items-center justify-between block">
-          <!--<span>시술 항목 & 가격 안내</span>-->
-          <span>시술 항목</span>		  
+          <span>시술 항목</span>
           <i class="fa-solid fa-wand-magic-sparkles text-[#735c00]"></i>
         </a>
         <a href="#before-after" onclick="toggleDrawer(false)" class="w-full px-4 py-3 rounded-xl font-medium text-[#1b1c1c] hover:bg-[#f6f3f2] flex items-center justify-between block">
           <span>비포 & 애프터 포트폴리오</span>
           <span class="text-xs text-[#635e53]">Before / After</span>
         </a>
+		<!--
+        <a href="#reviews" onclick="toggleDrawer(false)" class="w-full px-4 py-3 rounded-xl font-medium text-[#1b1c1c] hover:bg-[#f6f3f2] flex items-center justify-between block">
+          <span>고객 소중한 후기</span>
+          <i class="fa-solid fa-star text-[#735c00]"></i>
+        </a>
+		-->
         <a href="#location" onclick="toggleDrawer(false)" class="w-full px-4 py-3 rounded-xl font-medium text-[#1b1c1c] hover:bg-[#f6f3f2] flex items-center justify-between block">
-          <span>오시는 길 (토지금고시장에서)</span>
+          <span>오시는 길 (토지금고시장에서 도보 3분)</span>
           <i class="fa-solid fa-location-dot text-[#735c00]"></i>
         </a>
       </nav>
-
+      <!--	
       <div class="pt-2 border-t border-[#e9e2d3] space-y-2">
         <button onclick="toggleDrawer(false); openModal('bookingModal')" class="w-full py-3.5 bg-[#735c00] hover:bg-[#5f4c00] text-white rounded-xl font-medium text-sm flex items-center justify-center gap-2 shadow-sm transition-colors">
           <i class="fa-solid fa-calendar-check"></i>
@@ -150,6 +115,7 @@
           <span>전화 문의 (02-1234-5678)</span>
         </a>
       </div>
+	  -->
     </div>
   </div>
 
@@ -157,75 +123,12 @@
   <main class="w-full max-w-md mx-auto bg-[#fcf9f8] shadow-xs pb-10">
 
     <!-- Hero Carousel -->
-    <section id="hero" class="relative w-full h-[480px] sm:h-[520px] overflow-hidden bg-black select-none">
-      <!-- Slide 1 -->
-      <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-100 z-10">
-        <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?q=80&w=1600&auto=format&fit=crop" alt="화사뷰티" class="w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/30"></div>
-        <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6 pt-6 pb-12 z-20">
-          <div class="max-w-xs sm:max-w-md mx-auto space-y-4">
-            <!--
-			<h1 class="font-serif text-3xl sm:text-4xl font-bold text-white tracking-tight leading-snug drop-shadow-md">
-              당신의 아름다움이<br /><span class="block mt-1">피어나는 곳</span>
-            </h1>
-            <p class="text-sm sm:text-base text-white/90 leading-relaxed max-w-xs mx-auto font-normal">
-              섬세한 터치와 완벽한 디테일로 완성하는 화사뷰티만의 프리미엄 서비스.
-            </p>
-			-->
-			<div class="pt-20">
-            </div>
-			<div class="pt-20">
-            </div>			
-			<div class="pt-20">
-            </div>
-			<div class="pt-20">
-            </div>
-            <div class="pt-5">
-              <button onclick="openModal('bookingModal')" class="inline-flex items-center justify-center gap-2 px-7 py-3 bg-[#735c00] hover:bg-[#5a4800] text-white font-medium text-sm sm:text-base rounded-full shadow-lg transition-all">
-                <i class="fa-solid fa-calendar-days text-amber-200"></i>
-                <span>예약하기</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+    <section id="hero" class="relative w-full h-[320px] sm:h-[380px] overflow-hidden bg-[#fcf9f8] select-none">
+      <!-- Dynamic Slides Container -->
+      <div id="hero-slides-container"></div>
 
-      <!-- Slide 2 -->
-      <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-0 z-0">
-        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1600&auto=format&fit=crop" alt="화사뷰티 공간" class="w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/30"></div>
-        <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6 pt-6 pb-12 z-20">
-          <div class="max-w-xs sm:max-w-md mx-auto space-y-4">
-		  <!--
-            <h1 class="font-serif text-3xl sm:text-4xl font-bold text-white tracking-tight leading-snug drop-shadow-md">
-              프리미엄 공간에서<br /><span class="block mt-1">만나는 1:1 맞춤 케어</span>
-            </h1>
-            <p class="text-sm sm:text-base text-white/90 leading-relaxed max-w-xs mx-auto font-normal">
-              피부 톤, 골격, 모질을 분석하여 가장 어울리는 스타일을 디자인합니다.
-            </p>
-			-->
-			<div class="pt-20">
-            </div>
-			<div class="pt-20">
-            </div>			
-			<div class="pt-20">
-            </div>
-			<div class="pt-20">
-            </div>
-            <div class="pt-5">
-              <a href="#our-services" class="inline-flex items-center justify-center gap-2 px-7 py-3 bg-[#735c00] hover:bg-[#5a4800] text-white font-medium text-sm sm:text-base rounded-full shadow-lg transition-all">
-                <span>시술 라인업 보기</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide Dots -->
-      <div class="absolute bottom-5 left-0 right-0 z-30 flex items-center justify-center gap-2">
-        <button onclick="setSlide(0)" class="dot-btn w-6 h-2 bg-white rounded-full transition-all"></button>
-        <button onclick="setSlide(1)" class="dot-btn w-2 h-2 bg-white/50 rounded-full transition-all"></button>
-      </div>
+      <!-- Dynamic Slide Dots Container -->
+      <div id="hero-dots-container" class="absolute bottom-5 left-0 right-0 z-30 flex items-center justify-center gap-2"></div>
     </section>
 
     <!-- Core Strengths -->
@@ -271,43 +174,34 @@
           </div>
 
           <div class="space-y-3">
-            <div class="flex items-start justify-between gap-2 p-2 rounded-xl hover:bg-white transition-colors cursor-pointer" onclick="openModal('bookingModal')">
+            <div class="flex items-start justify-between gap-2 p-2.5 rounded-xl hover:bg-white transition-colors cursor-pointer border border-transparent hover:border-[#e9e2d3]" onclick="openModal('bookingModal', '자연눈썹')">
               <div class="flex items-start gap-2.5">
                 <i class="fa-solid fa-circle-check text-[#735c00] mt-1"></i>
                 <div>
                   <h4 class="font-bold text-[#1b1c1c] text-sm">자연눈썹</h4>
-                  <p class="text-xs text-[#635e53]">본연의 결을 살린 섬세한 디자인</p>
+                  <p class="text-xs text-[#635e53]">본연의 결을 살린 섬세한 3D 엠보 기법</p>
                 </div>
               </div>
-			  <!--
-              <span class="text-xs font-semibold text-[#735c00] bg-[#f4e8d3]/60 px-2 py-0.5 rounded-full shrink-0">180,000원</span>
-			  -->
             </div>
 
-            <div class="flex items-start justify-between gap-2 p-2 rounded-xl hover:bg-white transition-colors cursor-pointer" onclick="openModal('bookingModal')">
+            <div class="flex items-start justify-between gap-2 p-2.5 rounded-xl hover:bg-white transition-colors cursor-pointer border border-transparent hover:border-[#e9e2d3]" onclick="openModal('bookingModal', '아이라인')">
               <div class="flex items-start gap-2.5">
                 <i class="fa-solid fa-circle-check text-[#735c00] mt-1"></i>
                 <div>
                   <h4 class="font-bold text-[#1b1c1c] text-sm">아이라인</h4>
-                  <p class="text-xs text-[#635e53]">깊고 선명한 눈매 완성</p>
+                  <p class="text-xs text-[#635e53]">점막을 채워 또렷하고 또렷한 눈매 완성</p>
                 </div>
               </div>
-			  <!--
-              <span class="text-xs font-semibold text-[#735c00] bg-[#f4e8d3]/60 px-2 py-0.5 rounded-full shrink-0">150,000원</span>
-			  -->
             </div>
 
-            <div class="flex items-start justify-between gap-2 p-2 rounded-xl hover:bg-white transition-colors cursor-pointer" onclick="openModal('bookingModal')">
+            <div class="flex items-start justify-between gap-2 p-2.5 rounded-xl hover:bg-white transition-colors cursor-pointer border border-transparent hover:border-[#e9e2d3]" onclick="openModal('bookingModal', '틴트입술')">
               <div class="flex items-start gap-2.5">
                 <i class="fa-solid fa-circle-check text-[#735c00] mt-1"></i>
                 <div>
                   <h4 class="font-bold text-[#1b1c1c] text-sm">틴트입술</h4>
-                  <p class="text-xs text-[#635e53]">생기 있는 컬러와 볼륨감</p>
+                  <p class="text-xs text-[#635e53]">생기 있는 핑크 로즈 컬러와 입체 볼륨감</p>
                 </div>
               </div>
-			  <!--
-              <span class="text-xs font-semibold text-[#735c00] bg-[#f4e8d3]/60 px-2 py-0.5 rounded-full shrink-0">280,000원</span>
-			  -->
             </div>
           </div>
         </div>
@@ -316,36 +210,30 @@
         <div class="bg-[#f6f3f2] rounded-3xl p-6 sm:p-7 border border-[#e9e2d3]/80 shadow-xs space-y-4">
           <div class="flex items-center gap-3">
             <div class="w-11 h-11 rounded-full bg-[#fceee8] flex items-center justify-center border border-[#f5dcd3] text-[#c27d72]">
-              <i class="fa-solid fa-[#c27d72] fa-user-check text-lg"></i>
+              <i class="fa-solid fa-user-check text-lg"></i>
             </div>
             <h3 class="font-serif text-xl font-bold text-[#1b1c1c]">두피채움 (SMP)</h3>
           </div>
 
           <div class="space-y-3">
-            <div class="flex items-start justify-between gap-2 p-2 rounded-xl hover:bg-white transition-colors cursor-pointer" onclick="openModal('bookingModal')">
+            <div class="flex items-start justify-between gap-2 p-2.5 rounded-xl hover:bg-white transition-colors cursor-pointer border border-transparent hover:border-[#e9e2d3]" onclick="openModal('bookingModal', '헤어라인')">
               <div class="flex items-start gap-2.5">
                 <i class="fa-solid fa-circle-check text-[#735c00] mt-1"></i>
                 <div>
                   <h4 class="font-bold text-[#1b1c1c] text-sm">헤어라인</h4>
-                  <p class="text-xs text-[#635e53]">잔머리 효과로 동안 페이스 연출</p>
+                  <p class="text-xs text-[#635e53]">자연스러운 잔머리 착색 효과로 동안 축소</p>
                 </div>
               </div>
-			  <!--
-              <span class="text-xs font-semibold text-[#735c00] bg-[#f4e8d3]/60 px-2 py-0.5 rounded-full shrink-0">350,000원~</span>
-			  -->
             </div>
 
-            <div class="flex items-start justify-between gap-2 p-2 rounded-xl hover:bg-white transition-colors cursor-pointer" onclick="openModal('bookingModal')">
+            <div class="flex items-start justify-between gap-2 p-2.5 rounded-xl hover:bg-white transition-colors cursor-pointer border border-transparent hover:border-[#e9e2d3]" onclick="openModal('bookingModal', '정수리')">
               <div class="flex items-start gap-2.5">
                 <i class="fa-solid fa-circle-check text-[#735c00] mt-1"></i>
                 <div>
                   <h4 class="font-bold text-[#1b1c1c] text-sm">정수리 밀도보강</h4>
-                  <p class="text-xs text-[#635e53]">입체 도트 기법으로 풍성한 볼륨</p>
+                  <p class="text-xs text-[#635e53]">미세 도트 커버 기술로 촘촘한 밀도감</p>
                 </div>
               </div>
-			  <!--
-              <span class="text-xs font-semibold text-[#735c00] bg-[#f4e8d3]/60 px-2 py-0.5 rounded-full shrink-0">450,000원~</span>
-			  -->
             </div>
           </div>
         </div>
@@ -360,30 +248,24 @@
           </div>
 
           <div class="space-y-3">
-            <div class="flex items-start justify-between gap-2 p-2 rounded-xl hover:bg-white transition-colors cursor-pointer" onclick="openModal('bookingModal')">
+            <div class="flex items-start justify-between gap-2 p-2.5 rounded-xl hover:bg-white transition-colors cursor-pointer border border-transparent hover:border-[#e9e2d3]" onclick="openModal('bookingModal', '퍼스널')">
               <div class="flex items-start gap-2.5">
                 <i class="fa-solid fa-circle-check text-[#735c00] mt-1"></i>
                 <div>
                   <h4 class="font-bold text-[#1b1c1c] text-sm">퍼스널 컷</h4>
-                  <p class="text-xs text-[#635e53]">얼굴형과 모질 고려 맞춤 커트</p>
+                  <p class="text-xs text-[#635e53]">골격과 두상 라인을 고려한 프리미엄 커트</p>
                 </div>
               </div>
-			  <!--
-              <span class="text-xs font-semibold text-[#735c00] bg-[#f4e8d3]/60 px-2 py-0.5 rounded-full shrink-0">45,000원</span>
-			  -->
             </div>
 
-            <div class="flex items-start justify-between gap-2 p-2 rounded-xl hover:bg-white transition-colors cursor-pointer" onclick="openModal('bookingModal')">
+            <div class="flex items-start justify-between gap-2 p-2.5 rounded-xl hover:bg-white transition-colors cursor-pointer border border-transparent hover:border-[#e9e2d3]" onclick="openModal('bookingModal', '염색')">
               <div class="flex items-start gap-2.5">
                 <i class="fa-solid fa-circle-check text-[#735c00] mt-1"></i>
                 <div>
                   <h4 class="font-bold text-[#1b1c1c] text-sm">프리미엄 염색</h4>
-                  <p class="text-xs text-[#635e53]">손상 없는 윤기 나는 컬러 체인지</p>
+                  <p class="text-xs text-[#635e53]">손상 없는 오가닉 앰플 포함 윤기 염색</p>
                 </div>
               </div>
-			  <!--
-              <span class="text-xs font-semibold text-[#735c00] bg-[#f4e8d3]/60 px-2 py-0.5 rounded-full shrink-0">130,000원~</span>
-			  -->
             </div>
           </div>
         </div>
@@ -398,21 +280,24 @@
           <span>PORTFOLIO GALLERY</span>
         </span>
         <h2 class="font-serif text-2xl font-bold text-[#1b1c1c]">비포 & 애프터 변화 보기</h2>
-        <p class="text-xs text-[#635e53]">드래그하여 시술 전후의 변화를 직접 비교해보세요.</p>
+        <p class="text-xs text-[#635e53]">좌우로 드래그하여 시술 전후의 변화를 직접 확인하세요.</p>
       </div>
 
-      <!-- Before/After Image Canvas -->
-      <div className="relative w-full h-64 rounded-2xl overflow-hidden border border-[#d0c5af] shadow-md select-none">
-        <div class="relative w-full h-64 rounded-2xl overflow-hidden border border-[#d0c5af] shadow-md">
-          <!-- After -->
-          <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?q=80&w=800&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover" />
-          <span class="absolute top-3 right-3 bg-black/60 text-white text-[10px] font-bold px-2.5 py-1 rounded-md">AFTER (후)</span>
-          
-          <!-- Before overlay -->
-          <div id="beforeOverlay" class="absolute top-0 bottom-0 left-0 overflow-hidden w-1/2">
-            <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=800&auto=format&fit=crop" class="absolute top-0 left-0 h-full max-w-none object-cover" style="width: 320px;" />
-            <span class="absolute top-3 left-3 bg-black/60 text-white text-[10px] font-bold px-2.5 py-1 rounded-md">BEFORE (전)</span>
-          </div>
+      <!-- Before/After Interactive Comparison Canvas -->
+      <div id="baContainer" class="ba-container select-none">
+        <!-- After Image -->
+        <img src="./image/main_after.jpg" class="absolute inset-0 w-full h-full object-cover" alt="After" />
+        <span class="absolute top-3 right-3 bg-black/60 text-white text-[10px] font-bold px-2.5 py-1 rounded-md z-10">AFTER (시술 후)</span>
+        
+        <!-- Before Overlay Image -->
+        <div id="beforeOverlay" class="ba-overlay">
+          <img src="./image/before.jpg" class="absolute top-0 left-0 h-full max-w-none object-cover" style="width: 320px;" alt="Before" />
+          <span class="absolute top-3 left-3 bg-black/60 text-white text-[10px] font-bold px-2.5 py-1 rounded-md">BEFORE (시술 전)</span>
+        </div>
+
+        <!-- Slider Handle -->
+        <div id="baHandle" class="ba-slider-handle" style="left: 50%;">
+          <i class="fa-solid fa-left-right text-xs"></i>
         </div>
       </div>
       
@@ -422,11 +307,59 @@
           <span>M자형 눈썹 결 교정 & 3D 자연 엠보</span>
         </h4>
         <p class="text-xs text-[#635e53] mt-1 leading-relaxed">
-          비어있던 눈썹 산과 눈썹 꼬리를 본연의 털 결처럼 한 올 한 올 살려 선명하고 단정한 인상 완성.
+          비어있던 눈썹 산과 눈썹 꼬리를 본연의 털 결처럼 한 올 한 올 살려 선명하고 단정한 인상을 연출해드렸습니다.
         </p>
       </div>
     </section>
 
+    <!-- Customer Reviews Section -->
+	<!--
+    <section id="reviews" class="py-10 px-5 space-y-6">
+      <div class="text-center space-y-1">
+        <div class="inline-flex items-center gap-1.5 text-[#735c00] text-xs font-bold">
+          <div class="flex text-amber-500 gap-0.5">
+            <i class="fa-solid fa-star text-xs"></i>
+            <i class="fa-solid fa-star text-xs"></i>
+            <i class="fa-solid fa-star text-xs"></i>
+            <i class="fa-solid fa-star text-xs"></i>
+            <i class="fa-solid fa-star text-xs"></i>
+          </div>
+          <span class="ml-1 text-[#1b1c1c]">4.9 / 5.0 (280+ 후기)</span>
+        </div>
+        <h2 class="font-serif text-2xl font-bold text-[#1b1c1c]">
+          고객 분들의 소중한 후기
+        </h2>
+      </div>
+
+      <div class="space-y-3">
+        <div class="bg-white p-4 rounded-2xl border border-[#e9e2d3] space-y-2 shadow-2xs">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-xs text-[#1b1c1c]">이지은 님</span>
+            <span class="text-[11px] text-[#7f7663]">2026.02.01</span>
+          </div>
+          <div class="text-xs text-[#735c00] font-semibold bg-[#f4e8d3]/50 inline-block px-2 py-0.5 rounded-md">
+            자연눈썹 반영구
+          </div>
+          <p class="text-xs text-[#4d4635] leading-relaxed">
+            "짱구 눈썹 될까 봐 걱정 많았는데 진짜 제 진짜 눈썹 결처럼 한 올 한 올 그어주셔서 시술 당일에도 바로 약속 나갔어요! 완전 대만족입니다."
+          </p>
+        </div>
+
+        <div class="bg-white p-4 rounded-2xl border border-[#e9e2d3] space-y-2 shadow-2xs">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-xs text-[#1b1c1c]">박성민 님</span>
+            <span class="text-[11px] text-[#7f7663]">2026.01.28</span>
+          </div>
+          <div class="text-xs text-[#735c00] font-semibold bg-[#f4e8d3]/50 inline-block px-2 py-0.5 rounded-md">
+            정수리 SMP 두피채움
+          </div>
+          <p class="text-xs text-[#4d4635] leading-relaxed">
+            "M자 헤어라인과 정수리 탈모 때문에 스트레스였는데 모낭 손상 없이 정말 자연스럽게 커버되었습니다. 주변에서도 어디서 했는지 물어보네요."
+          </p>
+        </div>
+      </div>
+    </section>
+	-->
     <!-- Location -->
     <section id="location" class="py-10 px-5 space-y-6">
       <h2 class="font-serif text-2xl font-bold text-[#1b1c1c]">오시는 길 & 안내</h2>
@@ -438,8 +371,8 @@
           </div>
           <div>
             <h3 class="font-bold text-[#1b1c1c]">주소</h3>
-            <p class="text-[#4d4635] mt-0.5">인천광역시 미추홀구 토금중로47번길 4 1층</p>
-            <p class="text-[#735c00] font-medium mt-0.5">토지금고시장에서 걸어서 5분이내</p>
+            <p class="text-[#4d4635] mt-0.5">인천 미추홀구 토금중로47번길 4 1층</p>
+            <p class="text-[#735c00] font-medium mt-0.5">토지금고시장에서 도보 3분</p>
           </div>
         </div>
 
@@ -449,7 +382,7 @@
           </div>
           <div>
             <h3 class="font-bold text-[#1b1c1c]">영업시간</h3>
-            <p class="text-[#4d4635] mt-0.5">매일 10:00 ~ 19:00</p>
+            <p class="text-[#4d4635] mt-0.5">평일 10:00 - 19:00</p>
             <p class="text-[#ba1a1a] font-semibold mt-0.5">*매주 일요일 정기휴무</p>
           </div>
         </div>
@@ -460,26 +393,69 @@
           </div>
           <div>
             <h3 class="font-bold text-[#1b1c1c]">예약 및 문의</h3>
-            <a href="tel:02-1234-5678" class="text-[#1b1c1c] font-bold hover:text-[#735c00]">010-3721-5845</a>
+            <a href="tel:02-1234-5678" class="text-[#1b1c1c] font-bold hover:text-[#735c00]">02-1234-5678</a>
           </div>
         </div>
       </div>
 
       <!-- Map Button Card -->
+	  <!--
       <button onclick="openModal('mapModal')" class="w-full py-4 bg-[#f6f3f2] hover:bg-[#e9e2d3] border border-[#d0c5af] rounded-2xl flex items-center justify-center gap-2 text-xs font-bold text-[#1b1c1c] transition-colors">
         <i class="fa-solid fa-map-location-dot text-[#735c00]"></i>
         <span>지도로 매장 위치 보기 (네이버/카카오 연동)</span>
       </button>
     </section>
+	-->
+    <!-- FAQ Accordion -->
+	<!--
+    <section class="py-8 px-5 space-y-4 bg-[#f6f3f2] rounded-3xl my-6 mx-5 border border-[#e9e2d3]/80">
+      <div class="text-left space-y-1">
+        <span class="text-[11px] font-bold text-[#735c00] uppercase tracking-wider">FAQ</span>
+        <h3 class="font-serif text-xl font-bold text-[#1b1c1c]">자주 묻는 질문</h3>
+      </div>
+
+      <div class="space-y-2">
+        <div class="bg-white rounded-xl border border-[#e9e2d3] overflow-hidden">
+          <button class="faq-btn w-full p-3.5 text-left text-xs font-bold text-[#1b1c1c] flex items-center justify-between gap-2 hover:bg-[#fcf9f8] transition-colors cursor-pointer">
+            <span>Q. 반영구 시술 시 통증은 어느 정도인가요?</span>
+            <i class="faq-icon fa-solid fa-chevron-down text-[#735c00] transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden p-3.5 pt-0 text-xs text-[#635e53] leading-relaxed border-t border-[#f0eded]">
+            시술 전 1차/2차 맞춤 저자극 보습 진정 케어를 진행하여 통증 없이 편안하게 받으실 수 있습니다. 대부분 시술 중 수면을 취하시기도 합니다.
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl border border-[#e9e2d3] overflow-hidden">
+          <button class="faq-btn w-full p-3.5 text-left text-xs font-bold text-[#1b1c1c] flex items-center justify-between gap-2 hover:bg-[#fcf9f8] transition-colors cursor-pointer">
+            <span>Q. 시술 후 일상생활이나 메이크업은 언제부터 가능한가요?</span>
+            <i class="faq-icon fa-solid fa-chevron-down text-[#735c00] transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden p-3.5 pt-0 text-xs text-[#635e53] leading-relaxed border-t border-[#f0eded]">
+            당일 바로 가벼운 일상생활 및 출근이 가능합니다. 세안 및 메이크업은 시술 익일부터 추천해드립니다.
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl border border-[#e9e2d3] overflow-hidden">
+          <button class="faq-btn w-full p-3.5 text-left text-xs font-bold text-[#1b1c1c] flex items-center justify-between gap-2 hover:bg-[#fcf9f8] transition-colors cursor-pointer">
+            <span>Q. 두피채움 SMP 시술은 부작용이 없나요?</span>
+            <i class="faq-icon fa-solid fa-chevron-down text-[#735c00] transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden p-3.5 pt-0 text-xs text-[#635e53] leading-relaxed border-t border-[#f0eded]">
+            화사뷰티는 모낭 깊이를 건드리지 않는 피부 표피층 미세 착색 기술을 사용하여 모발 손상이나 모낭 부작용이 전혀 없습니다.
+          </div>
+        </div>
+      </div>
+    </section>
+	-->
 
   </main>
 
   <!-- Footer -->
   <footer class="bg-[#f6f3f2] border-t border-[#e9e2d3] py-10 px-5 text-center text-[#635e53] text-xs space-y-4 pb-28">
     <div class="max-w-md mx-auto space-y-2">
-      <p class="font-semibold text-[#1b1c1c]">화사뷰티 (HWASA BEAUTY) | 대표자: KSR</p>
+      <p class="font-semibold text-[#1b1c1c]">화사뷰티 (HWASA BEAUTY) | 대표자: 김화사</p>
       <p>사업자등록번호: 123-45-67890</p>
-      <p>인천광역시 미추홀구 토금중로47번길 4 1층</p>
+      <p>인천 미추홀구 토금중로47번길 4 1층</p>
       <p class="text-[11px] text-[#7f7663] pt-2">© 2026 Hwasa Beauty. All rights reserved.</p>
     </div>
   </footer>
@@ -509,7 +485,7 @@
   <!-- Modals -->
 
   <!-- Booking Modal -->
-  <div id="bookingModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden items-end sm:items-center justify-center p-0 sm:p-4">
+  <div id="bookingModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden items-end sm:items-center justify-center p-0 sm:p-4" onclick="closeModal('bookingModal')">
     <div class="bg-[#fcf9f8] w-full max-w-md rounded-t-3xl sm:rounded-3xl p-6 shadow-2xl border border-[#e9e2d3] space-y-4" onclick="event.stopPropagation()">
       <div class="flex items-center justify-between border-b border-[#e9e2d3] pb-3">
         <h3 class="font-serif font-bold text-lg text-[#1b1c1c]">온라인 실시간 예약</h3>
@@ -518,36 +494,36 @@
         </button>
       </div>
 
-      <form onsubmit="event.preventDefault(); alert('예약 신청이 완료되었습니다!'); closeModal('bookingModal');" class="space-y-3 text-xs">
+      <form onsubmit="event.preventDefault(); alert('예약 신청이 성공적으로 접수되었습니다.\n담당 실장이 확인 후 입력해주신 번호로 연락드리겠습니다.'); closeModal('bookingModal');" class="space-y-3 text-xs">
         <div>
           <label class="font-bold text-[#1b1c1c] block mb-1">시술 선택</label>
-          <select class="w-full p-2.5 rounded-xl border border-[#e9e2d3] bg-white text-[#1b1c1c]">
-            <option>자연눈썹 (180,000원)</option>
-            <option>아이라인 (150,000원)</option>
-            <option>틴트입술 (280,000원)</option>
-            <option>헤어라인 SMP (350,000원~)</option>
-            <option>정수리 SMP (450,000원~)</option>
-            <option>퍼스널 컷 (45,000원)</option>
-            <option>프리미엄 염색 (130,000원~)</option>
+          <select id="bookingServiceSelect" class="w-full p-2.5 rounded-xl border border-[#e9e2d3] bg-white text-[#1b1c1c]">
+            <option>자연눈썹</option>
+            <option>아이라인</option>
+            <option>틴트입술</option>
+            <option>헤어라인 SMP</option>
+            <option>정수리 SMP</option>
+            <option>퍼스널 컷</option>
+            <option>프리미엄 염색</option>
           </select>
         </div>
 
         <div>
-          <label class="font-bold text-[#1b1c1c] block mb-1">방문 일시</label>
-          <input type="date" required class="w-full p-2.5 rounded-xl border border-[#e9e2d3] bg-white" />
+          <label class="font-bold text-[#1b1c1c] block mb-1">방문 희망 날짜</label>
+          <input type="date" required class="w-full p-2.5 rounded-xl border border-[#e9e2d3] bg-white text-[#1b1c1c]" />
         </div>
 
         <div>
           <label class="font-bold text-[#1b1c1c] block mb-1">성함</label>
-          <input type="text" placeholder="예: 김화사" required class="w-full p-2.5 rounded-xl border border-[#e9e2d3] bg-white" />
+          <input type="text" placeholder="예: 김화사" required class="w-full p-2.5 rounded-xl border border-[#e9e2d3] bg-white text-[#1b1c1c]" />
         </div>
 
         <div>
           <label class="font-bold text-[#1b1c1c] block mb-1">연락처</label>
-          <input type="tel" placeholder="010-0000-0000" required class="w-full p-2.5 rounded-xl border border-[#e9e2d3] bg-white" />
+          <input type="tel" placeholder="010-0000-0000" required class="w-full p-2.5 rounded-xl border border-[#e9e2d3] bg-white text-[#1b1c1c]" />
         </div>
 
-        <button type="submit" class="w-full py-3 bg-[#735c00] hover:bg-[#5a4800] text-white font-bold rounded-xl text-sm transition-colors mt-2">
+        <button type="submit" class="w-full py-3.5 bg-[#735c00] hover:bg-[#5a4800] text-white font-bold rounded-xl text-sm transition-colors mt-2">
           예약 신청하기
         </button>
       </form>
@@ -555,97 +531,55 @@
   </div>
 
   <!-- Map Modal -->
-  <div id="mapModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden items-center justify-center p-4">
+  <div id="mapModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden items-center justify-center p-4" onclick="closeModal('mapModal')">
     <div class="bg-[#fcf9f8] w-full max-w-md rounded-3xl p-6 shadow-2xl border border-[#e9e2d3] space-y-4" onclick="event.stopPropagation()">
       <div class="flex items-center justify-between border-b border-[#e9e2d3] pb-3">
-        <h3 class="font-serif font-bold text-lg text-[#1b1c1c]">위치 및 주소 복사</h3>
+        <h3 class="font-serif font-bold text-lg text-[#1b1c1c]">위치 및 주소 안내</h3>
         <button onclick="closeModal('mapModal')" class="p-1 text-[#635e53]">
           <i class="fa-solid fa-xmark text-lg"></i>
         </button>
       </div>
 
       <div class="bg-[#f6f3f2] p-4 rounded-xl border border-[#e9e2d3] space-y-2 text-xs">
-        <p class="font-bold text-[#1b1c1c]">인천 미추홀구 토금중로47번길 4 1층</p>
-        <p class="text-[#735c00]">토지금고시장에서 걸어서 5분이내</p>
+        <p class="font-bold text-[#1b1c1c]">서울특별시 강남구 테헤란로 123, 뷰티타워 4층</p>
+        <p class="text-[#735c00] font-medium">강남역 12번 출구 도보 3분 거리</p>
       </div>
 
-<!--      <div class="grid grid-cols-2 gap-2">	-->
-      <div class="grid grid-cols-1 gap-1">	  
-        <a href="https://map.naver.com/p/entry/place/2030487948?c=15.00,0,0,0,dh&placePath=%2Fhome%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202608081530%26locale%3Dko%26svcName%3Dmap_pcv5" target="_blank" class="py-3 bg-[#03C75A] text-white font-bold text-center rounded-xl text-xs">
-          네이버 지도 열기
-        </a>
-		<!--
-        <a href="https://kko.to/7xZGPTUUWd" target="_blank" class="py-3 bg-[#FEE500] text-black font-bold text-center rounded-xl text-xs">
-          카카오맵 열기
-        </a>
-		-->
+      <div class="space-y-2">
+        <button onclick="copyAddress()" class="w-full py-3 bg-[#f4e8d3] hover:bg-[#e9e2d3] text-[#735c00] font-bold rounded-xl text-xs flex items-center justify-center gap-2 transition-colors">
+          <i class="fa-solid fa-copy"></i>
+          <span>도로명 주소 복사하기</span>
+        </button>
+
+        <div class="grid grid-cols-2 gap-2 pt-1">
+          <a href="https://map.naver.com" target="_blank" rel="noopener noreferrer" class="py-3 bg-[#03C75A] hover:bg-[#02b351] text-white font-bold text-center rounded-xl text-xs transition-colors">
+            네이버 지도 열기
+          </a>
+          <a href="https://map.kakao.com" target="_blank" rel="noopener noreferrer" class="py-3 bg-[#FEE500] hover:bg-[#ebd300] text-black font-bold text-center rounded-xl text-xs transition-colors">
+            카카오맵 열기
+          </a>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Share Modal -->
-  <div id="shareModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden items-center justify-center p-4">
+  <div id="shareModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden items-center justify-center p-4" onclick="closeModal('shareModal')">
     <div class="bg-[#fcf9f8] w-full max-w-sm rounded-3xl p-6 shadow-2xl border border-[#e9e2d3] space-y-4" onclick="event.stopPropagation()">
       <div class="flex items-center justify-between border-b border-[#e9e2d3] pb-3">
-        <h3 class="font-serif font-bold text-lg text-[#1b1c1c]">페이지 링크 공유</h3>
+        <h3 class="font-serif font-bold text-lg text-[#1b1c1c]">페이지 공유</h3>
         <button onclick="closeModal('shareModal')" class="p-1 text-[#635e53]">
           <i class="fa-solid fa-xmark text-lg"></i>
         </button>
       </div>
-      <p class="text-xs text-[#635e53]">화사뷰티 링크를 주소창에서 복사하여 전송하실 수 있습니다.</p>
-      <button onclick="navigator.clipboard.writeText(location.href); alert('링크가 복사되었습니다!'); closeModal('shareModal');" class="w-full py-3 bg-[#735c00] text-white font-bold rounded-xl text-xs">
-        주소 복사하기
+      <p class="text-xs text-[#635e53] leading-relaxed">화사뷰티 모바일 웹 페이지 링크를 클립보드에 복사합니다.</p>
+      <button onclick="navigator.clipboard.writeText(window.location.href); alert('링크가 클립보드에 복사되었습니다.'); closeModal('shareModal');" class="w-full py-3.5 bg-[#735c00] hover:bg-[#5f4c00] text-white font-bold rounded-xl text-xs transition-colors">
+        링크 주소 복사하기
       </button>
     </div>
   </div>
 
-  <!-- JavaScript -->
-  <script>
-    function toggleDrawer(show) {
-      const drawer = document.getElementById('drawer');
-      if (show) drawer.classList.remove('hidden');
-      else drawer.classList.add('hidden');
-    }
-
-    function openModal(id) {
-      const modal = document.getElementById(id);
-      if (modal) modal.classList.remove('hidden');
-      if (modal) modal.classList.add('flex');
-    }
-
-    function closeModal(id) {
-      const modal = document.getElementById(id);
-      if (modal) {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-      }
-    }
-
-    // Carousel logic
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.carousel-slide');
-    const dots = document.querySelectorAll('.dot-btn');
-
-    function setSlide(index) {
-      slides.forEach((slide, i) => {
-        if (i === index) {
-          slide.classList.remove('opacity-0', 'z-0');
-          slide.classList.add('opacity-100', 'z-10');
-          dots[i].classList.add('w-6', 'bg-white');
-          dots[i].classList.remove('w-2', 'bg-white/50');
-        } else {
-          slide.classList.add('opacity-0', 'z-0');
-          slide.classList.remove('opacity-100', 'z-10');
-          dots[i].classList.remove('w-6', 'bg-white');
-          dots[i].classList.add('w-2', 'bg-white/50');
-        }
-      });
-      currentSlide = index;
-    }
-
-    setInterval(() => {
-      setSlide((currentSlide + 1) % slides.length);
-    }, 5000);
-  </script>
+  <!-- Pure JavaScript File -->
+  <script src="./javascript/script.js"></script>
 </body>
 </html>
